@@ -1,0 +1,53 @@
+Ecosystem of Hadoop Framework
+
+
+HDFS Architecture(Storage Layer)
+-it has 2 main built in servers
+1. NameNode
+2. DataNode
+
+- it follows master slave architecture i.e. it has 1 main node which control the system and multiple worker nodes(perform tasks)
+
+-it has 3 main components
+1. NameNode- Master of HDFS cluster
+Tasks: Manage File system Namespace(file names, directory structures, file locs)
+       Control client access(when user access the file, the request first dent to namenode which tells which datanode contain the file blocks)
+       File operation(rw, rename, creating directory)
+E.g: It acts as library manager
+
+2. DataNode- worker node, every machines in the cluster has 1 datanode, aids in block creation, block deletion, block replication
+Tasks: Stores actual data
+       read and write blocks
+       Manage block replication
+E.g: It acts as a book shelves
+
+3. Block- Data Storage unit, block is the smallest unit of data that HDFS can read and write which is of 128 MB
+
+Suppose you have uploaded a file size 300MB
+First, HDFS will split the file into 3 blocks as follow:
+Block1-> 128MB
+Block2-> 128MB
+Block3-> 44MB
+Each block will be stored on different machines
+
+In HDFS, moving computation near data means executing processing tasks on the nodes where data resides, minimizing data transfer and improving performance.
+Hadoop move computation to where data exists means it sends processing program t the machine where data is stored.
+
+
+If datanode is fail: 
+DataNode fails → No heartbeat → NameNode detects → Uses replica → Creates new replica → System continues
+Thus no data will be lost.
+
+
+
+MapReduce Layer(Processing Layer)
+Allows: Process huge datasets, run tasks in parallel, uses cluster of commodity hardware
+
+Map Function: processes input data-> converts into key value pair, thus it breaks large data into small pieces
+Reduce Function: Takes output from map function as an input and combines similar keys and produces a final result.
+Both Map and reduce function are written in Java.
+
+
+
+
+  
