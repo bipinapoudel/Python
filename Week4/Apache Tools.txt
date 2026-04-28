@@ -1,0 +1,38 @@
+Data Processing & Query Tools for easy access and analytics
+
+
+Both flume and sqoop are used for data collection or ingestion
+FLUME- used for unstructured or semi-structured data src->channel->sink
+SQOOP- used for structured data in order to transfer data between RDBMS and Hadoop, Import->MYSQL->HDFS/HIVE, Export->HDFS->MYSQL
+
+HBASE- Columnar storage(no SQL Concept), it is NOSQL distributed database built on HDFS
+purpose-real-time read/write of big data
+
+
+HIVE- open source Data warehousing tool which is built on top of Hadoop HiveQL- it abstracts the complexity of MapReduce and allows user to query and analyze large datasets stored in HDFS
+when we are querying big data using SQL like language, we use HIVE in Hadoop.
+Whenever the data is structured then only we use hive for Data summarization, ad-hoc queries, analysis of large datasets.
+
+
+PIG- scripting tool used for reducing the code.
+
+MAHOUT- ML Algorithms
+
+OOZIE- Workflow Schedular, SQOOP->HIVE->PIG->MAPREDUCE
+
+Zookeeper- used for coordination and synchronization
+
+Cloudera- shell scripting or analyzing the output.
+
+Why Hadoop combine with hive?
+1. Simplified Map Reduce operation
+2. Accessibilty for non-developers
+3. Schema-on-read capabilities- hive allows user to define the schema at run/query time, useful for dealing with 
+Data is stored first, and the structure (schema) is applied only when you read/query the data.
+traditional dbs-> predefined schema->schema-on-write
+
+
+ 
+
+
+
