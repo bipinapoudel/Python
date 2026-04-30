@@ -1,0 +1,59 @@
+
+Apache Hadoop(MapReduce) Limitations
+1. Disk-based processing
+2. Batch processing
+3. Very slow
+4. Can't do ML, real time processing
+The data is collected over time and it is processed after in one group.
+
+APACHE SPARK(PySPARK)
+An open source framework for real-time processing.
+1. It uses in memory processing where data is stored in RAM and can reuse across operation
+2. Batch + streaming + ML + Graph
+3. Spark overcome time lagging
+4. Ease of code (can use scala, java, python, SQL)
+5. It uses RDD(Resilient Distributed Dataset)
+6. It don't have own storage
+The data is processed as soon as it gets generated.
+
+Apache Spark Architecture
+
+1. Driver Program
+Main logic- spark context- entry point of spark where it connects to cluster, allocates resources, and send tasks to workers
+DAG - execution plan
+
+2. Cluster manager- manages resources like CPU, Memory
+Spark supports:
+Standalone (built-in)
+YARN (Hadoop ecosystem)
+Mesos
+Kubernetes (modern & widely used)
+
+3. Worker Node- contains executor, cache, task, task - Execution layer
+If data has 100 partitions= 100 tasks
+each task -processes one partition
+
+LAZY EVALUATION: Brain of Spark Optimization
+Build a plan
+wait until an action is called
+
+Spark uses lazy evaluation
+df1=df.filter(df.age>25)
+df2=df1.select("name","age")
+
+--Transformation
+df=spark.read.csv("sales.csv")
+df_filter=df.filter(df.amount>500) #filtering
+df.grouped=df_filtered.GroupBy("product").count() #agrregation
+
+--Action
+df_grouped.show()
+
+RDD(Resilient Distributed Dataset) in Spark
+Data structure of Spark
+Dataframe -> Built on top of RDD
+DF = RDD + SCHEMA
+
+
+
+
