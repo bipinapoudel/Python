@@ -24,6 +24,7 @@ Zookeeper- used for coordination and synchronization
 
 Cloudera- shell scripting or analyzing the output.
 
+
 Why Hadoop combine with hive?
 1. Simplified Map Reduce operation
 2. Accessibilty for non-developers
